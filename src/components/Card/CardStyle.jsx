@@ -1,45 +1,5 @@
 import styled from "styled-components";
 
-export const CardContainer = styled.div`
-  width: calc(20% - 10px);
-  height: 250px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-  box-shadow: 0px 1px 3px black;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease-in;
-
-  &:hover {
-    background: #111;
-    transform: scale(1.05);
-  }
-
-  @media (max-width: 976px) {
-    & {
-      width: calc(25% - 10px);
-    }
-  }
-
-  @media (max-width: 747px) {
-    & {
-      width: calc(33% - 10px);
-    }
-  }
-
-  @media (max-width: 600px) {
-    & {
-      width: calc(50% - 10px);
-    }
-  }
-
-  @media (max-width: 390px) {
-    & {
-      width: calc(80% - 10px);
-    }
-  }
-`;
-
 export const CardImage = styled.img`
   width: 100%;
   height: 180px;
