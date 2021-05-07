@@ -4,6 +4,7 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import { Button } from "@material-ui/core";
 import YouTubeIcon from "@material-ui/icons/YouTube";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 import Fade from "@material-ui/core/Fade";
 import Carousel from "./Carousel/Carousel";
 import axios from "axios";
@@ -12,7 +13,16 @@ import {
   unavailable,
   unavailableLandscape,
 } from "../../config/config";
-import "./Modal.css";
+import {
+  ModalContent,
+  PortraitImage,
+  LandscapeImage,
+  Tagline,
+  ModalBody,
+  ModalTitle,
+  ModalDescription,
+  ModalActions,
+} from "./ModalStyle";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -21,9 +31,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   paper: {
-    width: "90%",
+    width: "80%",
     height: "80%",
-    backgroundColor: "#39445a",
+    backgroundColor: "#54596b",
     border: "1px solid #282c34",
     borderRadius: 10,
     color: "white",
@@ -34,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ModalContainer({ children, media_type, id }) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const [content, setContent] = useState();
   const [video, setVideo] = useState();
 
@@ -94,27 +104,25 @@ export default function ModalContainer({ children, media_type, id }) {
         <Fade in={open}>
           {content && (
             <div className={classes.paper}>
-              <div className="ContentModal">
-                <img
+              <ModalContent>
+                <PortraitImage
                   src={
                     content.poster_path
                       ? `${img_500}/${content.poster_path}`
                       : unavailable
                   }
                   alt={content.name || content.title}
-                  className="ContentModal__portrait"
                 />
-                <img
+                <LandscapeImage
                   src={
                     content.backdrop_path
                       ? `${img_500}/${content.backdrop_path}`
                       : unavailableLandscape
                   }
                   alt={content.name || content.title}
-                  className="ContentModal__landscape"
                 />
-                <div className="ContentModal__about">
-                  <span className="ContentModal__title">
+                <ModalBody>
+                  <ModalTitle>
                     {content.name || content.title} (
                     {(
                       content.first_air_date ||
@@ -122,30 +130,42 @@ export default function ModalContainer({ children, media_type, id }) {
                       "-----"
                     ).substring(0, 4)}
                     )
-                  </span>
+                  </ModalTitle>
                   {content.tagline && (
-                    <i className="tagline">{content.tagline}</i>
+                    <Tagline>Tagline:{content.tagline}</Tagline>
                   )}
 
-                  <span className="ContentModal__description">
-                    {content.overview}
-                  </span>
+                  <ModalDescription>{content.overview}</ModalDescription>
 
                   <div>
                     <Carousel id={id} media_type={media_type} />
                   </div>
 
-                  <Button
-                    variant="contained"
-                    startIcon={<YouTubeIcon />}
-                    color="secondary"
-                    target="__blank"
-                    href={`https://www.youtube.com/watch?v=${video}`}
-                  >
-                    Watch the Trailer
-                  </Button>
-                </div>
-              </div>
+                  <ModalActions>
+                    {" "}
+                    <Button
+                      variant="contained"
+                      startIcon={<YouTubeIcon />}
+                      color="secondary"
+                      target="__blank"
+                      href={`https://www.youtube.com/watch?v=${video}`}
+                      style={{ margin: "5px" }}
+                    >
+                      Watch the Trailer
+                    </Button>
+                    <Button
+                      variant="contained"
+                      startIcon={<FavoriteIcon />}
+                      color="primary"
+                      target="__blank"
+                      href={`https://www.youtube.com/watch?v=${video}`}
+                      style={{ margin: "5px" }}
+                    >
+                      Add to Favorite
+                    </Button>
+                  </ModalActions>
+                </ModalBody>
+              </ModalContent>
             </div>
           )}
         </Fade>
