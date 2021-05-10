@@ -4,6 +4,7 @@ export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
   height: 100%;
   width: 100%;
   overflow-y: scroll;
@@ -28,8 +29,7 @@ export const PortraitImage = styled.img`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 35%;
-    margin-top: 65px;
+    width: 32%;
     object-fit: cover;
   }
 `;
@@ -44,8 +44,8 @@ export const LandscapeImage = styled.img`
 
 export const Tagline = styled.p`
   padding-bottom: 7px;
-  font-size: 1em;
-  text-align: center;
+  font-size: 0.8em;
+  text-align: start;
   font-weight: bold;
   font-style: italic;
 `;
@@ -59,7 +59,7 @@ export const ModalBody = styled.div`
   font-family: "Poppins", sans-serif;
   justify-content: space-evenly;
   @media (min-width: 835px) {
-    width: 58%;
+    width: 60%;
     padding: 0;
     height: 100%;
   }
@@ -70,7 +70,7 @@ export const ModalTitle = styled.div`
   font-weight: bold;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   @media (min-width: 835px) {
     font-size: 1.5vw;
   }

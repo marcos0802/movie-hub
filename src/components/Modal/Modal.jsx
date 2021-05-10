@@ -23,6 +23,7 @@ import {
   ModalDescription,
   ModalActions,
 } from "./ModalStyle";
+import HorizontalDrawer from "../../pages/SharedStyles/HorizontalDrawer";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -35,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     height: "80%",
     backgroundColor: "#54596b",
     border: "1px solid #282c34",
-    borderRadius: 10,
+    borderRadius: 30,
     color: "white",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(1, 1, 3),
@@ -62,7 +63,7 @@ export default function ModalContainer({ children, media_type, id }) {
     );
 
     setContent(data);
-    // console.log(data);
+    //console.log(data);
   };
 
   const fetchVideo = async () => {
@@ -123,13 +124,16 @@ export default function ModalContainer({ children, media_type, id }) {
                 />
                 <ModalBody>
                   <ModalTitle>
-                    {content.name || content.title} (
-                    {(
-                      content.first_air_date ||
-                      content.release_date ||
-                      "-----"
-                    ).substring(0, 4)}
-                    )
+                    <div>
+                      {content.name || content.title} (
+                      {(
+                        content.first_air_date ||
+                        content.release_date ||
+                        "-----"
+                      ).substring(0, 4)}
+                      )
+                    </div>
+                    <div></div>
                   </ModalTitle>
                   {content.tagline && (
                     <Tagline>Tagline:{content.tagline}</Tagline>
@@ -138,6 +142,10 @@ export default function ModalContainer({ children, media_type, id }) {
                   <ModalDescription>{content.overview}</ModalDescription>
 
                   <div>
+                    <div style={{ display: "flex", fontWeight: "bold" }}>
+                      {" "}
+                      <HorizontalDrawer /> Casting
+                    </div>
                     <Carousel id={id} media_type={media_type} />
                   </div>
 
