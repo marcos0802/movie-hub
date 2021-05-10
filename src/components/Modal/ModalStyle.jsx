@@ -4,7 +4,6 @@ export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
   height: 100%;
   width: 100%;
   overflow-y: scroll;
@@ -29,13 +28,14 @@ export const PortraitImage = styled.img`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 32%;
+    width: 35%;
+    margin-top: 65px;
     object-fit: cover;
   }
 `;
 
 export const LandscapeImage = styled.img`
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 10px;
   @media (min-width: 835px) {
     display: none;
@@ -59,7 +59,7 @@ export const ModalBody = styled.div`
   font-family: "Poppins", sans-serif;
   justify-content: space-evenly;
   @media (min-width: 835px) {
-    width: 60%;
+    width: 58%;
     padding: 0;
     height: 100%;
   }

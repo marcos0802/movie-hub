@@ -165,8 +165,6 @@ export default function ModalContainer({ children, media_type, id }) {
                       variant="contained"
                       startIcon={<FavoriteIcon />}
                       color="primary"
-                      target="__blank"
-                      href={`https://www.youtube.com/watch?v=${video}`}
                       style={{ margin: "5px" }}
                     >
                       Add to Favorite
