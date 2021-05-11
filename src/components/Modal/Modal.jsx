@@ -47,7 +47,7 @@ export default function ModalContainer({ children, media_type, id }) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [content, setContent] = useState();
-  // const [video, setVideo] = useState("");
+  const [video, setVideo] = useState();
 
   const handleOpen = () => {
     setOpen(true);
@@ -63,20 +63,20 @@ export default function ModalContainer({ children, media_type, id }) {
     );
 
     setContent(data);
-    //console.log(data);
+    console.log(data);
   };
 
-  // const fetchVideo = async () => {
-  //   const { data } = await axios.get(
-  //     `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
-  //   );
+  const fetchVideo = async () => {
+    const { data } = await axios.get(
+      `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+    );
 
-  //   setVideo(data.results[0]?.key);
-  // };
+    setVideo(data.results[0]?.key);
+  };
 
   useEffect(() => {
     fetchData();
-    //       fetchVideo();
+   fetchVideo();
     // eslint-disable-next-line
   }, []);
 
@@ -156,7 +156,7 @@ export default function ModalContainer({ children, media_type, id }) {
                       startIcon={<YouTubeIcon />}
                       color="secondary"
                       target="__blank"
-                     // href={`https://www.youtube.com/watch?v=${video}`}
+                      href={`https://www.youtube.com/watch?v=${video}`}
                       style={{ margin: "5px" }}
                     >
                       Watch the Trailer

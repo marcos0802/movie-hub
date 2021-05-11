@@ -94,7 +94,7 @@ export const SearchContainer = styled.div`
 `;
 
 export const MoreContainer = styled.div`
-  height: 55vh;
+  margin-top: 10px;
+  height: 79vh;
   overflow-x: hidden;
-  display: flex;
 `;

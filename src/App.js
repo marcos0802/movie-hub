@@ -24,6 +24,7 @@ const AppContainer = styled.div`
 `;
 
 const App = () => {
+  // const location = useLocation();
   return (
     <BrowserRouter>
       <Header />
