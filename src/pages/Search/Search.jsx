@@ -7,7 +7,7 @@ import {
   ThemeProvider,
 } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CustomPagination from "../../components/Pagination/CustomPagination";
 import Card from "../../components/Card/Card";

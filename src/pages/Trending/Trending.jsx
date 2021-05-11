@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import React,{ useState, useEffect } from "react";
 import CustomPagination from "../../components/Pagination/CustomPagination";
 import Card from "../../components/Card/Card";
 import PageTitle from "../SharedStyles/PageTitle";

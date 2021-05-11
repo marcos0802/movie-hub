@@ -1,3 +1,4 @@
+import React from "react";
 import { HomeContainer } from "../SharedStyles/Description";
 import HomeImage from "../../assets/device-pile.png";
 import styled from "styled-components";
