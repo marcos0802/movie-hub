@@ -2,34 +2,8 @@ import React from "react";
 import HowToVoteIcon from "@material-ui/icons/HowToVote";
 import { img_300, unavailable } from "../../config/config";
 import ModalContainer from "../Modal/Modal";
-import { CardTitle, CardFooter } from "./CardStyle";
+import { CardTitle, CardFooter,CardContainer } from "./CardStyle";
 import "./Style.css";
-import styled from "styled-components";
-
-const CardContainer = styled.div`
-  height: 290px;
-  box-shadow: 0px 1px 5px black;
-  border-radius: 6px;
-  border: 2px solid steelblue;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  &:hover {
-    transform: scale(1.05);
-    .info-hidden {
-      transition: all 2s ease;
-      display: block;
-      text-align: center;
-      opacity: 1;
-      background: #000;
-    }
-  }
-  .info-hidden {
-    display: none;
-    opacity: 0;
-    z-index: 999;
-  }
-`;
 
 const Card = ({ id, poster, title, date, media_type, vote_average }) => {
   return (

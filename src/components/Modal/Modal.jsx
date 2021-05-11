@@ -7,6 +7,7 @@ import YouTubeIcon from "@material-ui/icons/YouTube";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import Fade from "@material-ui/core/Fade";
 import Carousel from "./Carousel/Carousel";
+
 import axios from "axios";
 import {
   img_500,
@@ -43,6 +44,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 export default function ModalContainer({ children, media_type, id }) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
@@ -76,7 +79,7 @@ export default function ModalContainer({ children, media_type, id }) {
 
   useEffect(() => {
     fetchData();
-   fetchVideo();
+    fetchVideo();
     // eslint-disable-next-line
   }, []);
 

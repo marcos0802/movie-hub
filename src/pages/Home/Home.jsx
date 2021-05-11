@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { HomeContainer } from "../SharedStyles/Description";
 import HomeImage from "../../assets/device-pile.png";
 import styled from "styled-components";
@@ -19,6 +20,7 @@ const HomeLeftSide = styled.div`
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 10px;
+    position: relative;
     background: steelblue;
     font-size: 17px !important;
     color: white;
@@ -76,7 +78,10 @@ const Home = () => {
       <HomeLeftSide>
         <h1>Welcome to Movie Hub</h1>
         <h3>Join a large community and discuss about Movies and TV Series!</h3>
-        <button className="btn">Join Now</button>
+        <br/>
+        <Link to="/more" className="btn">
+          Join Now
+        </Link>
       </HomeLeftSide>
       <HomeRightSide>
         <img src={HomeImage} alt="Device-Pile" className="image" />

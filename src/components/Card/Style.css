@@ -1,5 +1,5 @@
 .media {
-  width: calc(19% - 5px);
+  width: calc(20% - 5px);
 }
 @media (max-width: 976px) {
   .media {

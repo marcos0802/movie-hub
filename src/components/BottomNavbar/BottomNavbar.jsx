@@ -7,7 +7,6 @@ import TvIcon from "@material-ui/icons/Tv";
 import MovieIcon from "@material-ui/icons/Movie";
 import SearchIcon from "@material-ui/icons/Search";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
-import MoreIcon from "@material-ui/icons/More";
 import { Home } from "@material-ui/icons";
 
 const useStyles = makeStyles({
@@ -43,9 +42,7 @@ export default function SimpleBottomNavigation() {
       history.push("/series");
     } else if (value === 4) {
       history.push("/search");
-    } else if (value === 5) {
-      history.push("/more");
-    }
+    } 
   }, [value, history]);
 
   return (
@@ -82,10 +79,7 @@ export default function SimpleBottomNavigation() {
         label="Search"
         icon={<SearchIcon style={{ fontSize: 30 }} />}
       />
-      <BottomNavigationAction
-        className={classes.menuItem}
-        icon={<MoreIcon style={{ fontSize: 30 }} />}
-      />
+     
     </BottomNavigation>
   );
 }
